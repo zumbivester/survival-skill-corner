@@ -2,7 +2,7 @@ import { useState } from "react";
 import { TipCard } from "@/components/TipCard";
 import { SearchBar } from "@/components/SearchBar";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Home, Tool, Wrench, Shield, Flame, Droplets } from "lucide-react";
+import { Home, Wrench, Shield, Flame, Droplets } from "lucide-react";
 
 const tips = [
   {
