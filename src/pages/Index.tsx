@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { TipCard } from "@/components/TipCard";
 import { SearchBar } from "@/components/SearchBar";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -93,7 +93,7 @@ export default function Index() {
   });
 
   // Ticker effect
-  React.useEffect(() => {
+  useEffect(() => {
     if (selectedTip) {
       const interval = setInterval(() => {
         setTickerIndex((prev) => (prev + 1) % selectedTip.ticker.length);
