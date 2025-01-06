@@ -2,7 +2,7 @@ import { useState } from "react";
 import { TipCard } from "@/components/TipCard";
 import { SearchBar } from "@/components/SearchBar";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Home, Wrench, Shield, Flame, Droplets } from "lucide-react";
+import { Home, Wrench, Shield, Flame, Droplets, Lock, Globe } from "lucide-react";
 
 const tips = [
   {
@@ -26,10 +26,23 @@ const tips = [
     category: "Emergency",
     icon: Shield,
   },
-  // Add more tips as needed
+  {
+    id: 4,
+    title: "Secure Your Home Network",
+    description: "Essential steps to protect your home WiFi network from unauthorized access.",
+    category: "Safety & Privacy",
+    icon: Lock,
+  },
+  {
+    id: 5,
+    title: "Safe Internet Browsing",
+    description: "Best practices for maintaining privacy and security while browsing the internet.",
+    category: "Safety & Privacy",
+    icon: Globe,
+  }
 ];
 
-const categories = ["All", "Survival", "Home Repair", "Emergency"];
+const categories = ["All", "Survival", "Home Repair", "Emergency", "Safety & Privacy"];
 
 export default function Index() {
   const [search, setSearch] = useState("");
@@ -45,9 +58,9 @@ export default function Index() {
   return (
     <div className="container mx-auto py-8 px-4">
       <div className="mb-8 text-center">
-        <h1 className="text-4xl font-bold text-survival-500 mb-4">Survival & Home Repair Guide</h1>
+        <h1 className="text-4xl font-bold text-survival-500 mb-4">Survival & Safety Guide</h1>
         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-          Essential tips and tricks for survival skills, home repairs, and emergency preparedness.
+          Essential tips and tricks for survival skills, home repairs, emergency preparedness, and digital safety.
         </p>
       </div>
 
@@ -56,7 +69,7 @@ export default function Index() {
       </div>
 
       <Tabs defaultValue="All" className="max-w-3xl mx-auto">
-        <TabsList className="grid w-full grid-cols-4">
+        <TabsList className="grid w-full grid-cols-5">
           {categories.map((category) => (
             <TabsTrigger
               key={category}
